@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMDB API</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/app.js" defer></script>
+</head>
+<body class="bg-dark text-white">
+    <div class="container">
+        <h1 class="text-center my-3 display-3">OMDB Films</h1>
+        <input class="js-input form-control search-input py-3 my-5 w-75 mx-auto" type="search" placeholder="Search" aria-label="Search" required>
+        <button class="btn mode-btn js-mode-btn" type="button">☀️ Light</button>
+        <ul class="js-list list-unstyled d-flex justify-content-center gap-4 flex-wrap">
+            
+            <template class="js-temp">
+                <li class="card overflow-hidden" style="width: 18rem;">
+                    <img class="card-img-top poster-img js-img" src="" alt="" width="300" height="400">
+                    <div class="card-body">
+                      <h5 class="card-title text-black-50 js-title"></h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item js-type"></li>
+                      <li class="list-group-item js-year"></li>
+                      <li class="list-group-item js-id"></li>
+                    </ul>
+                    <div class="card-body">
+                      <a href="#" class="card-link js-link" target="_blank">More details</a>
+                    </div>
+                  </li>
+            </template>
+        </ul>
+        <ul class="pagination js-pagination justify-content-center mt-5 mb-2 d-none">
+            <li class="page-item js-prev"><a class="page-link" href="#">Previous</a></li>
+            <template class="js-page-item-temp">
+              <li class="page-item js-page-item"><a class="page-link js-page-link" href="#"></a></li>
+            </template>
+            <li class="page-item js-next"><a class="page-link" href="#">Next</a></li>
+          </ul>
+    </div>
+    <template class="js-loader-temp">
+      <div class="loader"></div>
+    </template>
+    <template class="js-not-found-temp">
+        <p class="text-center opacity-50 text-white mt-5 not-found-text js-error-text">Search Not Found</p>
+    </template>
+</body>
+</html>

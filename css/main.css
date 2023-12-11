@@ -1,0 +1,74 @@
+.not-found-text {
+    font-size: 40px; 
+    user-select: none; 
+    opacity: 0.5;
+}
+
+.poster-img {
+    transition: 0.3s;
+    object-fit: cover;
+}
+
+.poster-img:hover {
+    transform: scale(1.2);
+}
+
+.search-input {
+    font-size: 20px !important; 
+}
+
+.card {
+    transition: filter 0.5s ease;
+}
+
+.card:hover {
+    filter:grayscale(100%);
+}
+
+.page-item {
+    background-color:chocolate !important;
+}
+
+.mode-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 30px !important;
+    background-color: transparent;
+    color: white !important;
+}
+
+.light {
+    background-color:chocolate !important;
+}
+
+.loader {
+    margin-top: 50px;
+    width: 100px;
+    aspect-ratio: 1;
+    display:grid;
+    -webkit-mask: conic-gradient(from 15deg,#0000,#000);
+    animation: l26 1s infinite steps(12);
+  }
+  .loader,
+  .loader:before,
+  .loader:after{
+    background:
+      radial-gradient(closest-side at 50% 12.5%,
+       #1f1a1b 96%,#0000) 50% 0/20% 80% repeat-y,
+      radial-gradient(closest-side at 12.5% 50%,
+       #545252 96%,#0000) 0 50%/80% 20% repeat-x;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    grid-area: 1/1;
+    transform: rotate(30deg);
+  }
+  .loader:after {
+    transform: rotate(60deg);
+  }
+  
+  @keyframes l26 {
+    100% {transform:rotate(1turn)}
+  }
