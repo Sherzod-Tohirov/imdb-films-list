@@ -1,5 +1,5 @@
 const API_KEY = '8b4628df';
-const URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+const URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 const temp = document.querySelector('.js-temp').content;
 const notFoundTemp = document.querySelector('.js-not-found-temp').content;
 const pageItemTemp = document.querySelector('.js-page-item-temp').content;
@@ -45,7 +45,6 @@ elNext.addEventListener('click', (evt) => {
     const calc = Math.ceil(Number(total) / 10);
     if(page < calc) {
         page++;
-        console.log(page);
         if(page > 1) addDisabled(elPrev, false);
         getData(URL, `&s=${elInput.value.trim()}&page=${page}`);
         if(page == calc) addDisabled(elNext);
@@ -61,7 +60,6 @@ elNext.addEventListener('click', (evt) => {
 pagination.addEventListener('click', evt => {
     const total = localStorage.getItem('total');
     const calc = Math.ceil(Number(total) / 10);
-    console.log(evt);
     if(evt.target.matches('.js-page-link')) {
          page = evt.target.dataset.id;
          getData(URL, `&s=${elInput.value.trim()}&page=${page}`);
@@ -83,7 +81,6 @@ function getData(url, value) {
     fetch(url + value)
     .then(res => res.json())
     .then(data => {
-        console.log(data);
         if(data.Response === 'True') {
             render(data?.Search, list);
             if(Number(data.totalResults) > 10) {
@@ -136,7 +133,6 @@ function render(arr, node, error = false, loader = false) {
 function addPagination(add = true) {
     const total = Number(localStorage.getItem('total'));
     const calc = Math.ceil(total / 10);
-    console.log(pagination.children);
     if(!add) {
         pagination.classList.remove('d-flex');
         pagination.classList.add('d-none');
