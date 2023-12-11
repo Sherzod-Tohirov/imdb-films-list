@@ -1,5 +1,5 @@
 const API_KEY = '8b4628df';
-const URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+const URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 const temp = document.querySelector('.js-temp').content;
 const notFoundTemp = document.querySelector('.js-not-found-temp').content;
 const pageItemTemp = document.querySelector('.js-page-item-temp').content;
