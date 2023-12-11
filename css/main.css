@@ -72,3 +72,14 @@
   @keyframes l26 {
     100% {transform:rotate(1turn)}
   }
+
+
+
+@media only screen and (max-width: 500px) {
+    .mode-btn {
+        top: 1px;
+        right: 5px;
+        padding: 5px 5px !important;
+        font-size: 12px !important;
+    }
+}
