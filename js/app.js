@@ -1,5 +1,5 @@
 const API_KEY = '8b4628df';
-const URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
+const URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
 const temp = document.querySelector('.js-temp').content;
 const notFoundTemp = document.querySelector('.js-not-found-temp').content;
 const pageItemTemp = document.querySelector('.js-page-item-temp').content;
@@ -82,10 +82,11 @@ function getData(url, value) {
     .then(res => res.json())
     .then(data => {
         if(data.Response === 'True') {
-            render(data?.Search, list);
             if(Number(data.totalResults) > 10) {
                 localStorage.setItem('total', Number(data.totalResults));
             }
+
+            render(data?.Search, list);
         }else { 
             render(data, list, true)
             addPagination(false);
